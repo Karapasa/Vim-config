@@ -34,8 +34,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary' 
 Plugin 'mattn/emmet-vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'morhetz/gruvbox'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'sonph/onehalf', { 'rtp': 'vim' }
@@ -126,8 +124,8 @@ set fileencodings=utf8,cp1251
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 " Command button
+" Это почему-то не работает, но работает по дефолту ctrl-e!!!!!!
 let g:user_emmet_leader_key='<C-Z>'
-
 "Комментарий
 map <F4> gcc
 
@@ -147,7 +145,8 @@ map sl <C-w>l
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
 "Создание новой вкладки
-nmap te :tabedit
+nmap te :tabedit<CR>
 "Для Ranger
 let g:ranger_map_keys = 0
-nmap sf :RangerWorkingDirectory
+nmap sf :RangerWorkingDirectory<CR>
+nmap sc :cd %:p:h<CR>:pwd<CR>
